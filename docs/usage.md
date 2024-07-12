@@ -28,14 +28,14 @@ DDMMYY_SERIAL_NUMBER_FC3,/path/to/SampleSheet3.csv,3,/path/to/sequencer/output3
 
 | Column        | Description                                                                                                       |
 | ------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `flowcell`    | flowcell id                                                                                                       |
+| `id`    | Flowcell id                                                                                                       |
 | `samplesheet` | Full path to the `SampleSheet.csv` file containing the sample information and indexes                             |
 | `lane`        | Optional lane number. When a lane number is provided, only the given lane will be demultiplexed                   |
-| `run_dir`     | Full path to the Illumina sequencer output directory or a `tar.gz` file containing the contents of said directory |
+| `flowcell`     | Full path to the Illumina sequencer output directory (often referred as run directory) or a `tar.gz` file containing the contents of said directory |
 
 An [example samplesheet](https://raw.githubusercontent.com/nf-core/test-datasets/demultiplex/samplesheet/1.3.0/flowcell_input.csv) has been provided with the pipeline.
 
-Note `run_dir` must lead to a `tar.gz` for compatability with the demultiplexers sgdemux and fqtk
+Note that the run directory in the `flowcell` column must lead to a `tar.gz` for compatibility with the demultiplexers sgdemux and fqtk
 
 Please see the following examples to format `SampleSheet.csv` for [sgdemux](https://github.com/nf-core/test-datasets/blob/demultiplex/testdata/sim-data/out.sample_meta.csv) and [fqtk](https://github.com/fulcrumgenomics/nf-core-test-datasets/raw/fqtk/testdata/sim-data/fqtk_samplesheet.csv)
 
@@ -51,10 +51,10 @@ DDMMYY_SERIAL_NUMBER_FC3,/path/to/SampleSheet3.csv,3,/path/to/sequencer/output3,
 
 | Column                  | Description                                                                                                       |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `id`                    | flowcell id                                                                                                       |
+| `id`                    | Flowcell id                                                                                                       |
 | `samplesheet`           | Full path to the `SampleSheet.csv` file containing the sample information and indexes                             |
 | `lane`                  | Optional lane number. When a lane number is provided, only the given lane will be demultiplexed                   |
-| `run_dir`               | Full path to the Illumina sequencer output directory or a `tar.gz` file containing the contents of said directory |
+| `flowcell`               | Full path to the Illumina sequencer output directory (often referred as run directory) or a `tar.gz` file containing the contents of said directory |
 | `per_flowcell_manifest` | Full path to the flowcell manifest, containing the fastq file names and read structures                           |
 
 ## Running the pipeline
